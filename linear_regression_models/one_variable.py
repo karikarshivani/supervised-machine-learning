@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from lab_content.lab_utils_uni import plt_intuition, plt_stationary, plt_update_onclick, soup_bowl
 plt.style.use('./deeplearning.mplstyle') # TODO: Low priority - understand its use
 
 x_feature_values = [1.0, 1.2, 1.4, 1.6, 1.8, 2.0] # size in 1000 sqft

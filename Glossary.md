@@ -17,3 +17,5 @@ J(w,b) = $\frac{1}{2m}$ $\sum^{m-1}_{i=0}$ (f<sub>w,b</sub>(x<sup>(i)</sup>) - y
 
 Notes:
 (f<sub>w,b</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>)<sup>2</sup> # This gives you the squared difference between the target value (y) and the prediction (f(x))
+
+$\sum^{m-1}_{i=0}$ # The summation range is from 0 to m-1

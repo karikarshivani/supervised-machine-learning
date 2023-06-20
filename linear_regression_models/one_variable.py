@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from lab_content.lab_utils_uni import plt_intuition, plt_stationary, plt_update_onclick, soup_bowl
-plt.style.use('./deeplearning.mplstyle') # TODO: Low priority - understand its use
+plt.style.use('./lab_content/deeplearning.mplstyle') # TODO: Low priority - understand its use
+# from lab_content.lab_utils_uni import plt_intuition, plt_stationary, plt_update_onclick, soup_bowl
 
 x_feature_values = [1.0, 1.2, 1.4, 1.6, 1.8, 2.0] # size in 1000 sqft
 x_train = np.array(x_feature_values)
@@ -17,6 +17,18 @@ def compute_model_output(x, w, b): # Calculating f(x) = wx + b for training data
         f_wb[i] = w * x[i] + b
 
     return f_wb
+
+# def compute_cost(x, y, w, b): # Calculation cost function J to find ideal value for w
+#     m = len(x)
+
+#     cost_sum = 0
+#     for i in range(m):
+#         f_wb = w * x[i] + b
+#         cost = (f_wb - y[i]) ** 2
+#         cost_sum += cost
+#     total_cost = (1 / (2*m)) * cost_sum
+
+#     return total_cost
 
 w = 200
 b = 100

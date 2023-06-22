@@ -21,6 +21,11 @@ Notes:
 $\sum^{m-1}_{i=0}$ # The summation range is from 0 to m-1
 
 ### Gradient Descent
+$\frac{dJ(w,b)}{dw}$ = $\frac{1}{m}$ $\sum^{m-1}_{i=0}$ (f<sub>w,b</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>)x<sup>(i)</sup> # where d is $\delta$
+$\frac{dJ(w,b)}{db}$ = $\frac{1}{m}$ $\sum^{m-1}_{i=0}$ (f<sub>w,b</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>) # where d is $\delta$ 
+
 Repeat the following until convergence (close to 0):
 w = w - $\alpha$ $\frac{dJ(w,b)}{dw}$ # where d is $\delta$
 b = b - $\alpha$ $\frac{dJ(w,b)}{db}$ # where d is $\delta$ 
+
+`Note: The partial derivatives for all parameters are calculated before updating the values for them`

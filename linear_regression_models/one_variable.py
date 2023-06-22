@@ -22,17 +22,16 @@ def compute_model_output(x, w, b): # Calculating f(x) = wx + b for training data
 
     return f_wb
 
-# def compute_cost(x, y, w, b): # Calculation cost function J to find ideal value for w
-#     m = len(x)
+def compute_cost(x, y, w, b): # Calculation cost function J to find ideal value for w
+    m = len(x)
 
-#     cost_sum = 0
-#     for i in range(m):
-#         f_wb = w * x[i] + b
-#         cost = (f_wb - y[i]) ** 2
-#         cost_sum += cost
-#     total_cost = (1 / (2*m)) * cost_sum
+    cost = 0
+    for i in range(m):
+        f_wb = w * x[i] + b
+        cost = (f_wb - y[i]) ** 2
+    total_cost = (1 / (2*m)) * cost
 
-#     return total_cost
+    return total_cost
 
 w = 200
 b = 100

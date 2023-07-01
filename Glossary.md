@@ -1,9 +1,14 @@
 `x`   Training example feature (input data)
+
 `y`   Training example target (output data)
+
 `m`   Number of training examples
+
 `w`   Weight parameter
+
 `b`   Bias parameter
 
+$\alpha$ Alpha (learning rate between 0 and 1)
 
 
 

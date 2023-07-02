@@ -10,7 +10,9 @@
 
 $\alpha$ Alpha (learning rate between 0 and 1)
 
+$\bar{x}$<sub>j</sub><sup>(i)</sup>     Vector of x (list of multiple training features)
 
+$\bar{w}$<sub>j</sub><sup>(i)</sup>     Vector of w (list of weights associated to $\bar{x}$)
 
 ## Formulae:
 

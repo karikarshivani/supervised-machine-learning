@@ -16,7 +16,7 @@ b_init = 100
 
 # Temporary gradient descent settings
 iterations = 10000
-tmp_alpha = 1.0e-2
+tmp_alpha = 1.0e-2 # TODO: Understand the format
 
 def compute_gradient(x, y, w, b):
     """
@@ -117,9 +117,13 @@ def compute_model_output(x, w, b): # Calculating f(x) = wx + b for training data
 
     return f_wb
 
-temp_f_wb = compute_model_output(x_train, w, b)
-lab.plt_gradients(x_train, y_train, compute_cost, compute_gradient)
-plt.show()
+w_final, b_final, J_hist, p_hist = gradient_descent(x_train, y_train, w_init, b_init, tmp_alpha, iterations, compute_cost, compute_gradient)
+
+print(f"Final values w: {w_final}, b: {b_final}") # You can use {w_final:8.4f} to limit digits after decimal to 4 (8 is the padded length of the float)
+
+temp_f_wb = compute_model_output(x_train, w_final, b_final)
+# lab.plt_gradients(x_train, y_train, compute_cost, compute_gradient)
+# plt.show()
 plt.plot(x_train, temp_f_wb, c='purple', label='Prediction Graph') # TODO: Find diff between plot and scatter functions
 plt.scatter(x_train, y_train, marker='*', c='black', label='Training Data')
 plt.title('Housing Prices Model')

@@ -26,6 +26,8 @@ Notes:
 $\sum^{m-1}_{i=0}$ # The summation range is from 0 to m-1
 
 ### Gradient Descent
+Note: This is batch gradient descent (uses the entire training data set) and not gradient descent for subsets of training data.
+
 $\frac{dJ(w,b)}{dw}$ = $\frac{1}{m}$ $\sum^{m-1}_{i=0}$ (f<sub>w,b</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>)x<sup>(i)</sup> # where d is $\delta$
 $\frac{dJ(w,b)}{db}$ = $\frac{1}{m}$ $\sum^{m-1}_{i=0}$ (f<sub>w,b</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>) # where d is $\delta$ 
 

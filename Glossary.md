@@ -12,7 +12,14 @@ $\alpha$ Alpha (learning rate between 0 and 1)
 
 $\bar{x}$<sub>j</sub><sup>(i)</sup>     Vector of x (list of multiple training features)
 
-$\bar{w}$<sub>j</sub><sup>(i)</sup>     Vector of w (list of weights associated to $\bar{x}$)
+$\bar{w}$<sub>j</sub><sup>(i)</sup>     Vector of w (list of weights associated with $\bar{x}$)
+
+|        x<sub>1</sub>        |        x<sub>2</sub>        |        x<sub>3</sub>        |        x<sub>4</sub>        |
+| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
+| x<sub>1</sub><sup>(1)</sup> | x<sub>2</sub><sup>(1)</sup> | x<sub>3</sub><sup>(1)</sup> | x<sub>4</sub><sup>(1)</sup> |
+| x<sub>1</sub><sup>(2)</sup> | x<sub>2</sub><sup>(2)</sup> | x<sub>3</sub><sup>(2)</sup> | x<sub>4</sub><sup>(2)</sup> |
+| x<sub>1</sub><sup>(3)</sup> | x<sub>2</sub><sup>(3)</sup> | x<sub>3</sub><sup>(3)</sup> | x<sub>4</sub><sup>(3)</sup> |
+| x<sub>1</sub><sup>(4)</sup> | x<sub>2</sub><sup>(4)</sup> | x<sub>3</sub><sup>(4)</sup> | x<sub>4</sub><sup>(4)</sup> |
 
 ## Formulae:
 

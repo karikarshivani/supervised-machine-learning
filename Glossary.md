@@ -33,4 +33,4 @@ Repeat the following until convergence (close to 0):
 w = w - $\alpha$ $\frac{dJ(w,b)}{dw}$ # where d is $\delta$
 b = b - $\alpha$ $\frac{dJ(w,b)}{db}$ # where d is $\delta$ 
 
-`Note: The partial derivatives for all parameters are calculated before updating the values for them`
+`Note: Alpha determines how big of step is taken during gradient descent. The partial derivatives for all parameters are calculated before updating the values for them. Even with a fixed/constant learning rate (alpha), the gradient descent steps become smaller due to the partial derivatives reducing as they approach a local minimum. In other words, the slope may be steep for high cost function values so the partial derivative is high - leading to a bigger step during gradient descent. However, the slope gradually becomes gentle as it approaches the local minimum, the partial derivate reduces the length of the step.`

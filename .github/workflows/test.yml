@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: pip install numpy
+      # - run: pip install numpy
       - run: pip install matplotlib
+      - run: pip install matplotlib.pyplot
       - run: python linear_regression_models/one_variable.py

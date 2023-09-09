@@ -1,0 +1,10 @@
+name: run-one-variable
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+jobs:
+  check-model-output:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ls
+      - run: python --version

@@ -1,6 +1,8 @@
 name: run-one-variable
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: Plot the graph for linear regression model with one variable
+
 on: [push]
+
 jobs:
   check-model-output:
     runs-on: ubuntu-latest
@@ -15,3 +17,9 @@ jobs:
       
       - name: Execute the python code and plot the model
         run: python linear_regression_models/one_variable.py
+
+      - name: Upload graph image of the model
+        uses: actions/upload-artifact@v3
+        with:
+          name: model-graph
+          path: output/*

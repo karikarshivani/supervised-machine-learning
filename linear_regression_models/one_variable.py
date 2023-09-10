@@ -1,4 +1,5 @@
 import math, copy # TODO: Not sure what these are for
+from datetime import date
 import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('linear_regression_models/deeplearning.mplstyle')
@@ -130,4 +131,5 @@ plt.title('Housing Prices Model')
 plt.ylabel('Price (in 1000 dollars)')
 plt.xlabel('Size (in 1000 sqft)')
 plt.legend()
+plt.savefig(f"linear_regression_models/output/OneVariable{date.isoformat(date.today())}.png")
 plt.show()

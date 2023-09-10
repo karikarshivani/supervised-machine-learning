@@ -5,7 +5,13 @@ jobs:
   check-model-output:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: pip install matplotlib
-      - run: pip install ipywidgets
-      - run: python linear_regression_models/one_variable.py
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          pip install matplotlib
+          pip install ipywidgets
+      
+      - name: Execute the python code and plot the model
+        run: python linear_regression_models/one_variable.py

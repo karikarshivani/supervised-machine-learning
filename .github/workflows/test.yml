@@ -7,6 +7,9 @@ jobs:
   check-model-output:
     runs-on: ubuntu-latest
     steps:
+      - name: Set env var for current date
+        run: echo "DATE=$(date "+%y-%m-%d")" >> "$GITHUB_ENV"
+
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -21,5 +24,5 @@ jobs:
       - name: Upload graph image of the model
         uses: actions/upload-artifact@v3
         with:
-          name: model-graph${{ steps.date.outputs.date }}
+          name: model-graph${{ env.DATE }}
           path: linear_regression_models/output/*

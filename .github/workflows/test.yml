@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set env var for current date
-        run: echo "DATE=$(date "+%y-%m-%d")" >> "$GITHUB_ENV"
+        run: echo "DATE=$(date "+%Y-%m-%d")" >> "$GITHUB_ENV"
 
       - name: Checkout repo
         uses: actions/checkout@v3

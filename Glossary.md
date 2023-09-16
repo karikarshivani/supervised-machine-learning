@@ -1,3 +1,5 @@
+## GLOSSARY:
+
 `x`   Training example feature (input data)
 
 `y`   Training example target (output data)
@@ -21,7 +23,9 @@ $\bar{w}$<sub>j</sub><sup>(i)</sup>     Vector of w (list of weights associated 
 | x<sub>1</sub><sup>(3)</sup> | x<sub>2</sub><sup>(3)</sup> | x<sub>3</sub><sup>(3)</sup> | x<sub>4</sub><sup>(3)</sup> |
 | x<sub>1</sub><sup>(4)</sup> | x<sub>2</sub><sup>(4)</sup> | x<sub>3</sub><sup>(4)</sup> | x<sub>4</sub><sup>(4)</sup> |
 
-## Formulae:
+
+
+## FORMULAE:
 
 ### Line graph / Linear model
 f<sub>w,b</sub>(x<sup>(i)</sup>) = wx<sup>(i)</sup> + b # This gives you the prediction for example i using parameters w and b
@@ -45,3 +49,13 @@ w = w - $\alpha$ $\frac{dJ(w,b)}{dw}$ # where d is $\delta$
 b = b - $\alpha$ $\frac{dJ(w,b)}{db}$ # where d is $\delta$ 
 
 `Note: Alpha determines how big of step is taken during gradient descent. The partial derivatives for all parameters are calculated before updating the values for them. Even with a fixed/constant learning rate (alpha), the gradient descent steps become smaller due to the partial derivatives reducing as they approach a local minimum. In other words, the slope may be steep for high cost function values so the partial derivative is high - leading to a bigger step during gradient descent. However, the slope gradually becomes gentle as it approaches the local minimum, the partial derivate reduces the length of the step.`
+
+
+
+## DEFINITIONS:
+
+### Feature Scaling
+
+Features can be different ranges of values which can lead to concentrated scatter plots. These values can be scaled with their relation to other values of that feature.
+
+1. Divide by maximum: $\frac{x<sub>1</sub>}{max}$

@@ -1,0 +1,28 @@
+name: run-one-variable
+run-name: Plot the graph for linear regression model with one variable
+
+on: [push]
+
+jobs:
+  check-model-output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set env var for current date
+        run: echo "DATE=$(date "+%Y-%m-%d")" >> "$GITHUB_ENV"
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          pip install matplotlib
+          pip install ipywidgets
+      
+      - name: Execute the python code and plot the model
+        run: python linear_regression_models/one_variable.py
+
+      - name: Upload graph image of the model
+        uses: actions/upload-artifact@v3
+        with:
+          name: model-graph-${{ env.DATE }}
+          path: linear_regression_models/output/*

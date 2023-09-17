@@ -50,12 +50,16 @@ b = b - $\alpha$ $\frac{dJ(w,b)}{db}$ # where d is $\delta$
 
 `Note: Alpha determines how big of step is taken during gradient descent. The partial derivatives for all parameters are calculated before updating the values for them. Even with a fixed/constant learning rate (alpha), the gradient descent steps become smaller due to the partial derivatives reducing as they approach a local minimum. In other words, the slope may be steep for high cost function values so the partial derivative is high - leading to a bigger step during gradient descent. However, the slope gradually becomes gentle as it approaches the local minimum, the partial derivate reduces the length of the step.`
 
-
+_Note: Set the learning rate extremely small (such as 0.001) to find out if the cost(J) decreases with every iteration. If even a small learning rate doesn't lead to cost (J) decreasing, review the code for bugs. Increase the learning rate (~3 times each time) to make it more efficient without causing a learning rate too large for incorrect learning curve for cost(J)
 
 ## DEFINITIONS:
 
 ### Feature Scaling
 
-Features can be different ranges of values which can lead to concentrated scatter plots. These values can be scaled with their relation to other values of that feature.
+Features can be different ranges of values which can lead to concentrated scatter plots. These values can be scaled with their relation to other values of that feature. The aim is to get the values of the features roughly between -1 to 1. If the actual values of the features are too large or too small, they can be scaled - however, a range of 3 usually works so not every feature needs to be scaled.
 
-1. Divide by maximum: $\frac{x<sub>1</sub>}{max}$
+#### Methods:
+1. Divide by maximum: $\frac{x<sub>1</sub>}{max}$ | This will provide a range from ~0 to 1
+2. Mean normalization: $\frac{x<sub>1</sub> - mean}{max - min}$ | This will surround the values around 0 (both negative and positive values)
+3. Z-score normalization: $\frac{x<sub>1</sub> - $\mu$}{$\sigma$}$ | An extra option that can be used using standard deviation
+

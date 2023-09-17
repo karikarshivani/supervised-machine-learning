@@ -2,9 +2,9 @@ import math, copy # TODO: Not sure what these are for
 from datetime import date
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('linear_regression_models/deeplearning.mplstyle')
+plt.style.use('linear_regression_models/lib/deeplearning.mplstyle')
 # from lab_utils_uni import plt_gradients, plt_intuition, plt_stationary, plt_update_onclick, soup_bowl
-import lab_utils_uni as lab
+import lib.lab_utils_uni as lab
 
 x_feature_values = [1.0, 1.2, 1.4, 1.6, 1.8, 2.0] # size in 1000 sqft
 x_train = np.array(x_feature_values)

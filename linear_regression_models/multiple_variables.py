@@ -1,7 +1,7 @@
 import copy, math
 import numpy as np
 import matplotlib.pyplot as plt
-plt.style.use('linear_regression_models/deeplearning.mplstyle')
+plt.style.use('linear_regression_models/lib/deeplearning.mplstyle')
 np.set_printoptions(precision=2)  # reduced display precision on numpy arrays
 
 # Note: rows are separate examples (m) | columns are individual features (n)

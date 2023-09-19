@@ -8,18 +8,35 @@ np.set_printoptions(precision=2)  # reduced display precision on numpy arrays
 
 # Note: rows are separate examples (m) | columns are individual features (n)
 # four features: sqft, bedrooms, floors, age)
-X_train = np.array([
-    [2104, 5, 1, 45],
-    [1416, 3, 2, 40],
-    [852, 2, 1, 35]
-])
 
-# target: price
-Y_train = np.array([
-    460,
-    232,
-    178
-])
+## DUMMY DATA
+    # X_train = np.array([
+    #     [2104, 5, 1, 45],
+    #     [1416, 3, 2, 40],
+    #     [852, 2, 1, 35]
+    # ])
+
+    # # target: price
+    # Y_train = np.array([
+    #     460,
+    #     232,
+    #     178
+    # ])
+
+## LAB DATA
+
+X_train, Y_train = load_house_data()
+X_features = ['size (sqft)', 'bedrooms (count)', 'floors (count)', 'age (years)']
+Y_target = "price (1000's)"
+
+## Plot dataset against price
+
+fig, ax = plt.subplots(1, 4, figsize=(12,3), sharey=True)
+for i in range(len(ax)):
+    ax[i].scatter(X_train[:,i], Y_train)
+    ax[i].set_xlabel(X_features[i])
+ax[0].set_ylabel(Y_target)
+# plt.show()
 
 w_init = np.array([
     0.39133535,
@@ -134,3 +151,11 @@ def gradient_descent(X, y, w_in, b_in, cost_function, gradient_function, alpha, 
 
     return w, b, J_history
 
+
+## ALTERNATE GRADIENT DESCENT FROM LAB LIB TO TEST APPROPRIATE LEARNING RATE
+
+_, _, hist = run_gradient_descent(X_train, Y_train, 10, alpha=2e-7)
+plot_cost_i_w(X_train, Y_train, hist)
+
+# Adjust alpha as needed to find a rate that leads to convergence (left graph)
+# Change iterations from 10 to more if needed

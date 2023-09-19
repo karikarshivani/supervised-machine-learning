@@ -1,5 +1,7 @@
 import copy, math
 import numpy as np
+from lib.lab_utils_multi import load_house_data, run_gradient_descent, norm_plot, plt_equal_scale, plot_cost_i_w
+from lib.lab_utils_common import dlc
 import matplotlib.pyplot as plt
 plt.style.use('linear_regression_models/lib/deeplearning.mplstyle')
 np.set_printoptions(precision=2)  # reduced display precision on numpy arrays

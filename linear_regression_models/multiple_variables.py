@@ -26,7 +26,7 @@ np.set_printoptions(precision=2)  # reduced display precision on numpy arrays
 ## LAB DATA
 
 X_train, Y_train = load_house_data()
-X_features = ['size (sqft)', 'bedrooms (count)', 'floors (count)', 'age (years)']
+X_feature_names = ['size (sqft)', 'bedrooms (count)', 'floors (count)', 'age (years)']
 Y_target = "price (1000's)"
 
 ## Plot dataset against price
@@ -34,9 +34,31 @@ Y_target = "price (1000's)"
 fig, ax = plt.subplots(1, 4, figsize=(12,3), sharey=True)
 for i in range(len(ax)):
     ax[i].scatter(X_train[:,i], Y_train)
-    ax[i].set_xlabel(X_features[i])
+    ax[i].set_xlabel(X_feature_names[i])
 ax[0].set_ylabel(Y_target)
 # plt.show()
+
+def z_score_normalize_feaures(X):
+    """
+    computes X, z-score normalized by column
+
+    Args:
+        X (ndarray (m,n))       : input data, m examples, n features
+
+    Returns:
+        X_norm (ndarray (m,n))  : input normalized by column
+        mu (ndarray (n,))       : mean of each feature
+        sigma (ndarray (n,))    : standard deviation of each feature
+    """
+
+    mu = np.mean(X, axis=0) # In a 2D array | axis=0 : column mean, axis=1 : row mean
+    sigma = np.std(X, axis=0)
+
+    X_norm = (X - mu) / sigma
+
+    return (X_norm, mu, sigma)
+
+X_norm, X_mu, X_sigma = z_score_normalize_feaures(X_train)
 
 w_init = np.array([
     0.39133535,
@@ -154,8 +176,19 @@ def gradient_descent(X, y, w_in, b_in, cost_function, gradient_function, alpha, 
 
 ## ALTERNATE GRADIENT DESCENT FROM LAB LIB TO TEST APPROPRIATE LEARNING RATE
 
-_, _, hist = run_gradient_descent(X_train, Y_train, 10, alpha=2e-7)
-plot_cost_i_w(X_train, Y_train, hist)
+w_norm, b_norm, hist = run_gradient_descent(X_norm, Y_train, 10, alpha=1.0e-1)
 
 # Adjust alpha as needed to find a rate that leads to convergence (left graph)
 # Change iterations from 10 to more if needed
+
+
+## Prediction test with one example:
+
+x_house = np.array([1200, 3, 1, 40]) # ref: ['size (sqft)', 'bedrooms (count)', 'floors (count)', 'age (years)']
+x_house_norm = (x_house - X_mu) / X_sigma # normalize features using z-score
+print(x_house_norm)
+x_house_predict = np.dot(x_house_norm, w_norm) + b_norm
+print(f"Predicted price = ${x_house_predict*1000:0.0f}") ## TODO: Find out why my prediction is different (Lab: $318709)
+
+
+

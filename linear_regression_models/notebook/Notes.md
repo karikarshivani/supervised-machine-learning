@@ -61,5 +61,5 @@ Features can be different ranges of values which can lead to concentrated scatte
 #### Methods:
 1. Divide by maximum: $\frac{x<sub>1</sub>}{max}$ | This will provide a range from ~0 to 1
 2. Mean normalization: $\frac{x<sub>1</sub> - mean}{max - min}$ | This will surround the values around 0 (both negative and positive values)
-3. Z-score normalization: $\frac{x<sub>1</sub> - $\mu$}{$\sigma$}$ | An extra option that can be used using standard deviation
+3. Z-score normalization: $\frac{x<sub>1</sub> - $\mu$}{$\sigma$}$ | An ideal option that can be implemented using standard deviation
 

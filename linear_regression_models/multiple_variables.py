@@ -1,8 +1,7 @@
 import copy, math
 import numpy as np
-from lib.lab_utils_multi import load_house_data, run_gradient_descent, norm_plot, plt_equal_scale, plot_cost_i_w
-from lib.lab_utils_common import dlc
 import matplotlib.pyplot as plt
+from lib.lab_utils_multi import load_house_data, run_gradient_descent, norm_plot, plt_equal_scale, plot_cost_i_w
 plt.style.use('linear_regression_models/lib/deeplearning.mplstyle')
 np.set_printoptions(precision=2)  # reduced display precision on numpy arrays
 
@@ -80,7 +79,7 @@ def compute_cost(X, y, w, b):
         b (scalar)       : model parameter
 
     Returns:
-        cost (scalar): difference between expected outcome
+        cost (scalar): difference between expected outcome (ŷ - y)
     """
 
     m = X.shape[0]

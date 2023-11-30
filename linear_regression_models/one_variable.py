@@ -48,7 +48,7 @@ def compute_gradient(x, y, w, b):
 
     return dj_dw, dj_db
 
-def compute_cost(x, y, w, b): # Calculation cost function J to find ideal value for w
+def compute_cost(x, y, w, b): # Calculation cost function J to find ideal value for w and b
     m = len(x)
 
     cost = 0

@@ -12,8 +12,13 @@ The neural network has three main layers:
 
 There are two steps to training the network: the [feed-forward](#feed-forward-loop) step and the [back-propagation](#back-propagation-loop) step.
 
-_Note:_ Inputs are not directly added. Instead, they are multiplied by a weight value first. This helps the neural network decide which inputs should contribute more to the output than others.
+<details>
+
+<summary> Note: Input Weight | Output Normalization</summary>
+Inputs are not directly added. Instead, they are multiplied by a weight value first. This helps the neural network decide which inputs should contribute more to the output than others.
 The addition's output is not directly transmitted out. Instead, the output is first entered into what is called an activation function. In essence, this decides if the neuron (node) will be active or not. It does this by ensuring that the output, no matter the input, will always be a decimal between 0 and 1 (or between −1 and 1).
+
+</details>
 
 ### Feed-Forward Loop:
 

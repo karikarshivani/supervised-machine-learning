@@ -38,7 +38,7 @@ def compute_gradient(x, y, w, b):
 
     for i in range(m):
         f_wb = w * x[i] + b
-        dj_dw_i = (f_wb - y [i]) * x[i]
+        dj_dw_i = (f_wb - y[i]) * x[i]
         dj_db_i = f_wb - y[i]
         dj_dw += dj_dw_i
         dj_db += dj_db_i
@@ -55,7 +55,8 @@ def compute_cost(x, y, w, b): # Calculation cost function J to find ideal value 
     for i in range(m):
         f_wb = w * x[i] + b
         cost = (f_wb - y[i]) ** 2
-    total_cost = (1 / (2*m)) * cost
+        total_cost += cost
+    total_cost *= 1 / (2*m)
 
     return total_cost
 

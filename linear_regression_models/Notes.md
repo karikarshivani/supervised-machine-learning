@@ -41,16 +41,16 @@ $\sum^{m-1}_{i=0}$ # The summation range is from 0 to m-1
 ### Gradient Descent
 Note: This is batch gradient descent (uses the entire training data set) and not gradient descent for subsets of training data.
 
-$\frac{dJ(w,b)}{dw}$ = $\frac{1}{m}$ $\sum^{m-1}_{i=0}$ (f<sub>w,b</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>)x<sup>(i)</sup> # where d is $\delta$
+$\frac{dJ(w,b)}{dw}$ = $\frac{1}{m}$ $\sum^{m-1}_{i=0}$ (f<sub>w,b</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>)x<sub>j<sup>(i)</sup> # where d is $\delta$
 $\frac{dJ(w,b)}{db}$ = $\frac{1}{m}$ $\sum^{m-1}_{i=0}$ (f<sub>w,b</sub>(x<sup>(i)</sup>) - y<sup>(i)</sup>) # where d is $\delta$ 
 
 Repeat the following until convergence (close to 0):
-w = w - $\alpha$ $\frac{dJ(w,b)}{dw}$ # where d is $\delta$
+w<sub>j</sub> = w<sub>j</sub> - $\alpha$ $\frac{dJ(w,b)}{dw}$ # where d is $\delta$
 b = b - $\alpha$ $\frac{dJ(w,b)}{db}$ # where d is $\delta$ 
 
 `Note: Alpha determines how big of step is taken during gradient descent. The partial derivatives for all parameters are calculated before updating the values for them. Even with a fixed/constant learning rate (alpha), the gradient descent steps become smaller due to the partial derivatives reducing as they approach a local minimum. In other words, the slope may be steep for high cost function values so the partial derivative is high - leading to a bigger step during gradient descent. However, the slope gradually becomes gentle as it approaches the local minimum, the partial derivate reduces the length of the step.`
 
-_Note: Set the learning rate extremely small (such as 0.001) to find out if the cost(J) decreases with every iteration. If even a small learning rate doesn't lead to cost (J) decreasing, review the code for bugs. Increase the learning rate (~3 times each time) to make it more efficient without causing a learning rate too large for incorrect learning curve for cost(J)
+`Tip: Set the learning rate extremely small (such as 0.001) to find out if the cost(J) decreases with every iteration. If even a small learning rate doesn't lead to cost (J) decreasing, review the code for bugs. Increase the learning rate (~3 times each time) to make it more efficient without causing a learning rate too large for incorrect learning curve for cost(J)`
 
 ## DEFINITIONS:
 
